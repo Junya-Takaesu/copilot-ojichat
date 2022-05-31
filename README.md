@@ -4,7 +4,7 @@
 ### 1. アプリの作成
 
 ```
-perman-aws-vault exec copilot app init
+copilot app init
 ```
 - 作成される AWS リソース
   - CloudFormation スタック
@@ -18,7 +18,7 @@ perman-aws-vault exec copilot app init
 
 ### 2. env の作成
 ```
-perman-aws-vault exec copilot env init
+copilot env init
 ```
 - 作成される AWS リソース
   - CloudFormation スタック
@@ -31,7 +31,7 @@ perman-aws-vault exec copilot env init
 
 ### 3. job の作成
 ```
-perman-aws-vault exec copilot job init
+copilot job init
 ```
 - スクラッチでやると、定期実行間隔の設定とか聞かれる
 - でも、`/copilot` ディレクトリ無いにあるサブディレクトリの名前を指定すると、そのサブディレクトリ内の manifest.yml を使える(tchat-jobが今ある)
@@ -39,7 +39,6 @@ perman-aws-vault exec copilot job init
 
 ### 4. job を 単発の job として実行
 ```
-perman-aws-vault exec \
 copilot task run \
 --follow \
 --app takaesu-ojichat \
@@ -53,14 +52,14 @@ copilot task run \
 
 ### 5. 後片付け
 ```
-perman-aws-vault exec copilot task delete
+copilot task delete
 ```
 ```
-perman-aws-vault exec copilot job delete
+copilot job delete
 ```
 ```
-perman-aws-vault exec copilot env delete
+copilot env delete
 ```
 ```
-perman-aws-vault exec copilot app delete --name takaesu-ojichat
+copilot app delete --name takaesu-ojichat
 ```
